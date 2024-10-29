@@ -9,7 +9,7 @@ body {
 
 header {
     background-image: url('img/emcabezado.jpg'); /* Ruta de tu imagen */
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     color: white;
     padding: 1em;
@@ -21,7 +21,7 @@ header {
 
 header h1 {
     margin: 0.5em 0;
-    font-size: 5em;
+    font-size: 3em; /* Tamaño de fuente ajustado */
 }
 
 nav a {
@@ -76,12 +76,12 @@ footer {
     margin-top: 2em;
 }
 
-
 /* Estilos para las imágenes de la sección de imágenes con transición */
 .imgs {
     display: flex;
-    width: 600px;
-    height: 300px;
+    flex-wrap: wrap; /* Se ajusta en columnas en pantallas pequeñas */
+    width: 100%;
+    height: auto;
 }
 
 .imgs img {
@@ -132,10 +132,7 @@ body {
     font-size: 18px;
 }
 
-
-
-
-
+/* Fondo de sección con gradiente e imagen */
 .bg-sec {
     background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(img/fondo.jpg);
     background-position: center center;
@@ -145,17 +142,12 @@ body {
     margin: 30px 0;
 }
 
-
-
-
-
-
 /* Estilos para el botón de flecha arriba */
 .flecha-arriba {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #ffffff;
+    background-color: #27AE60;
     color: #fff;
     border: none;
     border-radius: 50%;
@@ -169,9 +161,47 @@ body {
     z-index: 1000;
 }
 .flecha-arriba img {
-    width: 30px; /* Ajusta el tamaño de la flecha según tus necesidades */
+    width: 20px;
     height: auto;
 }
 
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5em; /* Ajuste del tamaño del encabezado */
+    }
 
+    nav a {
+        display: block; /* Nav en columna */
+        margin: 5px 0;
+    }
 
+    .imgs {
+        flex-direction: column; /* Imágenes en columnas */
+    }
+
+    .flecha-arriba {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    section {
+        padding: 1em;
+        margin: 0.5em;
+    }
+
+    .flecha-arriba {
+        width: 35px;
+        height: 35px;
+    }
+
+    .flecha-arriba img {
+        width: 15px;
+    }
+}
